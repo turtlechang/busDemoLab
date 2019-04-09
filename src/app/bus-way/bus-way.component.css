@@ -1,0 +1,125 @@
+.container-fluid {
+  width: 700px;
+  margin: 0 auto;
+}
+
+#bus-way-choose {
+  margin-bottom: 50px;
+}
+
+.btn {
+  width: 600px;
+  height: 40px;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  padding: 5px 0px;
+  font-family: Microsoft JhengHei;
+}
+
+#go {
+  background-color: #43afd6;
+  /* margin-left: 40px; */
+  margin-right: 10px;
+}
+
+#back {
+  background-color: #0ba32c;
+  /* margin-left: 10px; */
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.bus-state {
+  position: relative;
+  height: 80px;
+}
+
+.sta-name {
+  width: 200px;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  padding: 2% 0;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: Microsoft JhengHei;
+}
+
+.time {
+  width: 150px;
+  background-color: rgba(250, 65, 65, 0.719);
+  color: #fff;
+  text-align: center;
+  padding: 2% 0;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: Microsoft JhengHei;
+}
+
+.seqNo {
+  width: 28px;
+  height: 28px;
+  background-color: #999;
+  color: #fff;
+  text-align: center;
+  /* padding: 2% 0; */
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: Microsoft JhengHei;
+  border-radius: 10%;
+}
+
+.bus {
+  width: 150px;
+  background-color: rgb(8, 60, 156);
+  color: #fff;
+  text-align: center;
+  padding: 2% 0;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: Microsoft JhengHei;
+}
+
+.buswaylist {
+  overflow-y: scroll;
+  max-height: 670px;
+}
+
+.map {
+  margin: 0%;
+  padding: 0%;
+}
+.busRouteName {
+  width: 700px;
+  height: 40px;
+  font-size: 28px;
+  color: rgb(4, 6, 148);
+  font-weight: 700;
+  border: none;
+  font-family: Microsoft JhengHei;
+}
+
+.carId {
+  width: 150px;
+  background-color: rgba(14, 5, 138, 0.719);
+  color: #fff;
+  text-align: center;
+  padding: 2% 0;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: Microsoft JhengHei;
+}

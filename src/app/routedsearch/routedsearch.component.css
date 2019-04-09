@@ -1,0 +1,4 @@
+.buslist {
+    overflow-y: scroll;
+    max-height: 700px;
+}

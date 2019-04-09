@@ -1,0 +1,28 @@
+<div class="buslists">
+  <ul *ngFor="let buslist of buslists">
+    <li class="card" title="路線詳情" [routerLink]="['/BusRouteSearch', buslist.ID]">
+      <!-- [routerLink]，在 Template 端透過屬性的傳遞，適用於動態路由。 -->
+      <div class="row ">
+        <div>
+          <i class="fa fa-bus" title="bus"></i>
+        </div>
+        <div class="busLink col-5">
+          <a>
+            <!-- 如果使用動態值生成鏈接，則可以傳遞路徑段數組，然後傳遞每個段的參數。 -->
+            <p class="bus-num" title="公車路線號碼">{{buslist.nameZh}}</p>
+            <!--公車路線號碼-->
+            <p class="bus-way" title="公車路線名稱">{{buslist.ddesc}}</p>
+            <!--公車路線名稱-->
+          </a>
+        </div>
+        <div class="btndiv col">
+          <a class="btn" title="公車路線圖" href="{{buslist.routeMapImageUrl}}" target="_blank">公車路線圖</a>
+          <!--公車路線圖-->
+          <!-- target="_blank" 在同視窗開新頁面 -->
+          <a class="btn" title="公車路線站址表" href="{{buslist.stopAddrUrl}}" target="_blank">公車路線站址表</a>
+          <!--公車路線站址表-->
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

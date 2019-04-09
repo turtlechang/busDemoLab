@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">    
+    <router-outlet></router-outlet><!-- 這個未命名的出口(router-outlet)是主要出口 -->
+</div>
+<app-footer></app-footer>
+<!-- 除主要插座外，所有其他插座必須有名稱。
+例如: <router-outlet  name="sidebar"></router-outlet> -->
+
+<!-- 啟動順序
+index.html  
+↓
+app.module.ts
+↓
+app.component.ts
+↓
+app.component.html -->
+
+<!-- 假如用一場舞台劇比喻
+index.html： 演戲的舞台
+app-routing.module.ts： 每一幕的劇本 (對應到哪個網址名稱，就換幕或演哪一齣戲)
+app.module.ts： 每一幕有哪些戲或是否有其他幕來支援的表單
+app.component.ts： 一齣戲裡面每個人物的台詞和動作、道具被觸發的變色動作...
+app.component.html： 一齣戲裡面的布景、機關、人物的服裝... -->

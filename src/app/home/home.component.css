@@ -1,0 +1,30 @@
+.fa-road {
+    font-size: 60px;
+    font-weight: 700;
+    position: relative;
+    top: 45px;
+    color: #002fff8c;
+    cursor: pointer;
+}
+
+.card {
+    width: 100px;
+    background-color: #fff;
+    padding: 0 0 100px 10px;
+    /* padding:上 右 下 左; */
+    /* margin-bottom: 20px; */
+    margin: 0;
+    /* margin:上 右 下 左; */
+    text-align: center;
+}
+
+.card:hover {
+    /* 當滑鼠經過時，卡片顏色會變色 */
+    background-color: #f1bda9;
+    /*之前的顏色 #b3ffe2*/
+}
+
+
+/* .cards{
+    background-color: rgb(86, 61, 124);
+} */

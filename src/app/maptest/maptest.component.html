@@ -1,0 +1,51 @@
+<div>
+  <h3>
+    <img [src]="iconUrlBusIconGo"> :去程的公車
+    <img [src]="iconUrlBusIconBack"> :回程的公車
+    <img [src]="iconUrlStopGo"> :去程的站牌
+    <img [src]="iconUrlStopBack"> :回程的站牌
+  </h3>
+  <button (click)="initData()">定位東京</button>
+  <h5>緯度:{{lat}} 經度:{{lng}}</h5>
+</div>
+
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoomValue">
+  <!-- longitude:經度  latitude:緯度-->
+
+  <agm-marker *ngFor="let busData of busDatasGo;let i = index" [latitude]="busData.Latitude"
+    [longitude]="busData.Longitude" [iconUrl]="iconUrlBusIconGo" (markerClick)="isOpen">
+    <agm-info-window [latitude]="lat+0.0005" [longitude]="lng">
+      <div>去程</div>
+      <div>GoBack: {{busData.GoBack}}</div>
+      <div>車號: {{busData.BusID}}</div>
+    </agm-info-window>
+  </agm-marker>
+
+  <agm-marker *ngFor="let busData of busDatasBack;let i = index" [latitude]="busData.Latitude"
+    [longitude]="busData.Longitude" [iconUrl]="iconUrlBusIconBack" (markerClick)="isOpen">
+    <agm-info-window [latitude]="lat+0.0005" [longitude]="lng">
+      <div>回程</div>
+      <div>GoBack: {{busData.GoBack}}</div>
+      <div>車號: {{busData.BusID}}</div>
+    </agm-info-window>
+  </agm-marker>
+
+  <agm-marker *ngFor="let busStop of busStopsGo;let i = index" [latitude]="busStop.latitude"
+    [longitude]="busStop.longitude" [iconUrl]="iconUrlStopGo" (markerClick)="isOpen">
+    <agm-info-window [latitude]="lat+0.0005" [longitude]="lng">
+      <div>去程</div>
+      <hr>
+      <div>第{{busStop.seqNo}}站 {{busStop.nameZh}}</div>
+    </agm-info-window>
+  </agm-marker>
+
+  <agm-marker *ngFor="let busStop of busStopsBack;let i = index" [latitude]="busStop.latitude"
+    [longitude]="busStop.longitude" [iconUrl]="iconUrlStopBack" (markerClick)="isOpen">
+    <agm-info-window [latitude]="lat+0.0005" [longitude]="lng">
+      <div>回程</div>
+      <hr>
+      <div>第{{busStop.seqNo}}站 {{busStop.nameZh}}</div>
+    </agm-info-window>
+  </agm-marker>
+
+</agm-map>

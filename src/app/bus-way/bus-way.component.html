@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-6">
+
+    <div class="container-fluid">
+      <div class="d-flex justify-content-center busRouteName">{{busRouteName}}號公車路線</div>
+      <div id="bus-way-choose" class="d-flex justify-content-left">
+        <button id="go" type="button" class="btn" (click)="getGo()">{{destination}}</button>
+        <button id="back" type="button" class="btn" (click)="getBack()">{{departure}} </button>
+      </div>
+    </div>
+
+    <div class="container buswaylist">
+      <ul id="bus-way-list" *ngFor="let bus of showTime;let i = index">
+        <li class="bus-state d-flex align-items-center justify-content-around">
+          <div class="seqNo">{{i+1}}</div>
+          <div class="sta-name">{{bus.StopName}}</div>
+          <div class="time">約 {{bus.comeTime}}</div>
+          <div [hidden]="!bus.carId">
+            <div class="carId">{{bus.carId}}</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="col-6">
+    <app-maptest class="map"></app-maptest>
+  </div>
+</div>
