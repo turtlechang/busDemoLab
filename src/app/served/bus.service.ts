@@ -41,18 +41,57 @@ export class BusService {
 
 //公車路線列表
 export interface BusRouteList {
-  ID: string,//路線代碼
-  ProviderId: string,//
+  /**
+   * 路線代碼
+   */
+  ID: string,
+  /**
+   * 業者代號
+   */
+  ProviderId: string,
+  /**
+   * 路線的中文名稱
+   */
   nameZh: string,
+  /**
+   * 公總對應路線代碼
+   */
   gxcode: string,
+  /**
+   * 路線的詳細描述
+   */
   ddesc: string,
+  /**
+   * 路線起點
+   */
   departureZh: string,
+  /**
+   * 路線起點
+   */
   destinationZh: string,
+  /**
+   * 路線類別
+   */
   RouteType: string,
+  /**
+   * 保留
+   */
   MasterRouteName: string,
+  /**
+   * 保留
+   */
   MasterRouteNo: string,
+  /**
+   * 保留
+   */
   MasterRouteDesc: string,
+  /**
+   * 路線地圖網址
+   */
   routeMapImageUrl: string,
+  /**
+   * 路線地圖網址
+   */
   stopAddrUrl: string,
   op_type: number
 }

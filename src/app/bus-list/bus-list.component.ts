@@ -25,7 +25,7 @@ export class BusListComponent implements OnInit {
         this.busService.search().subscribe(
           (res) => {
             this.buslists = res.filter(
-              (bus) => {
+              (bus: BusRouteList) => {
                 if (params) {
                   return bus.nameZh == params;
                 } else {
@@ -39,7 +39,7 @@ export class BusListComponent implements OnInit {
     );
 
 
-    
+
   }
 }
 //在RxJS中，有兩個角色，Observable和Subscription，
