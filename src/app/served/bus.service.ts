@@ -7,7 +7,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class BusService {
 
-  private baseUrl: string = 'https://192.168.195.55';// 開發用
+  //private baseUrl: string = 'https://192.168.195.55';// 開發用
+
+  private baseUrl: string = 'https://cors.io/';
 
   searchEvent: EventEmitter<string> = new EventEmitter();
 
@@ -15,26 +17,26 @@ export class BusService {
 
   // 取得全部的公車路線{EX: 中壢<->桃園、桃園<->果菜市場、桃園<->華映公司、桃園<->大有路...等等}
   getBusLists() {
-    return this.httpClient.get<BusRouteList[]>(`${this.baseUrl}/bus/api/GetRoute`, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } });
+    return this.httpClient.get<BusRouteList[]>(`${this.baseUrl}?http://apidata.tycg.gov.tw/OPD-io/bus4/GetRoute.json`, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } });
   }
   // 取得該路線(單一)的所有公車站牌的
   //{EX:151同安街路線: 統領百貨站、桃園郵局、永和市場、中正三民路口、中正商業大樓、北埔路、中正信光街口、中正慈文路口、慈文國中、中正大興西路口、福安宮...等等}
   getBusList(routeId: string): Observable<BusStop[]> {
     // let body = routeId ? `?routeIds=${routeId}` : ''
-    return this.httpClient.get<BusStop[]>(`${this.baseUrl}/bus/api/GetStop?routeIds=${routeId}`, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } });
+    return this.httpClient.get<BusStop[]>(`${this.baseUrl}?http://apidata.tycg.gov.tw/OPD-io/bus4/GetStop.json?routeIds=${routeId}`, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } });
   }
 
   // 取得該路線(單一)的所有公車站牌的等待剩餘時間
   getEstimateTime(routeId: string): Observable<BusEstimateTimes> {
-    return this.httpClient.get<BusEstimateTimes>(`${this.baseUrl}/bus/api/GetEstimateTime?routeIds=${routeId}`);
+    return this.httpClient.get<BusEstimateTimes>(`${this.baseUrl}?http://apidata.tycg.gov.tw/OPD-io/bus4/GetEstimateTime.json?routeIds=${routeId}`);
   }
 
   getBusData(routeId: string): Observable<BusData[]> {
-    return this.httpClient.get<BusData[]>(`${this.baseUrl}/bus/api/GetBusData?routeIds=${routeId}`);
+    return this.httpClient.get<BusData[]>(`${this.baseUrl}?http://apidata.tycg.gov.tw/OPD-io/bus4/GetBusData.json?routeIds=${routeId}`);
   }
 
   search(): Observable<any> {
-    return this.httpClient.get(`${this.baseUrl}/bus/api/GetRoute`, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } });
+    return this.httpClient.get(`${this.baseUrl}?http://apidata.tycg.gov.tw/OPD-io/bus4/GetRoute.json`, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } });
   }
 
 }
