@@ -10,18 +10,15 @@ import { BusService } from '../served/bus.service';
 //要注意的是，我們通常會使用export class，以方便在其他的模組裡可以import來使用
 export class SearchComponent implements OnInit {
 
-  searchlist: string='';
+  searchlist: string = '';
   constructor(private busService: BusService) {
-
   }
 
   ngOnInit() {
-
   }
 
   onSearch() {
     this.busService.searchEvent.emit(this.searchlist);
-    console.log('輸入的是: ' + this.searchlist)
+    console.log('輸入的是: ' + this.searchlist);
   }
-
 }
