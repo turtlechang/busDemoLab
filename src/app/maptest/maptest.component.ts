@@ -64,30 +64,4 @@ export class MaptestComponent implements OnInit {
     this.lng = 139.6007805;//經度
     console.log('我在東京了!!');
   }
-
-  // getCenterLat(busStop: BusStop[]) {
-  //   let latMax = busStop.reduce(function (previousValue, currentValue) {
-  //     return previousValue.latitude > currentValue.latitude ? previousValue : currentValue;
-  //   });
-  //   console.log('最大經度: ' + latMax.latitude);
-  //   let latMin = busStop.reduce(function (previousValue, currentValue) {
-  //     return previousValue.latitude < currentValue.latitude ? previousValue : currentValue;
-  //   });
-  //   console.log('最小經度: ' + latMin.latitude);
-  //   return ((latMax.latitude + latMin.latitude) / 2);    
-  // }
-
-  // getCenterLng(busStop: BusStop[]) {
-  //   let lngMax = busStop.reduce(function (previousValue, currentValue) {
-  //     return previousValue.longitude > currentValue.longitude ? previousValue : currentValue;
-  //   });
-  //   console.log('最大緯度: ' + lngMax.longitude);
-  //   let lngMin = busStop.reduce(function (previousValue, currentValue) {
-  //     return previousValue.longitude < currentValue.longitude ? previousValue : currentValue;
-  //   });
-  //   console.log('最小緯度: ' + lngMin.longitude);
-  //   return ((lngMax.longitude + lngMin.longitude) / 2);    
-  // }
-
-
 }

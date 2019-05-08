@@ -39,10 +39,6 @@ export class BusWayComponent implements OnInit {
     );
     //初始化去程列表
     this.getGo();
-    setInterval(function () {
-      console.log("log");
-    }, 2000);
-    
   }
 
   getGo() {
