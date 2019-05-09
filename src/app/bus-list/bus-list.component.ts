@@ -15,9 +15,9 @@ export class BusListComponent implements OnInit {
 
   ngOnInit() {
     // 首次登入的時候對公車的展示，同步的寫法    
-    this.busService.getBusLists().subscribe((res) => { this.buslists = res });
+    this.busService.getBusLists().subscribe((res) => { this.buslists = res; console.log(res.length); });
     console.log(this.busService.getBusLists());
-
+  
     //通過搜索按鈕實現的發射的流的接收和訂閲，只能精準搜尋
     // this.busService.searchEvent.subscribe(
     //   (params) => {
