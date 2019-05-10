@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-6">
+  <div class="col-4">
 
     <div class="container-fluid">
       <div class="d-flex justify-content-center busRouteName">{{busRouteName}}號公車路線</div>
@@ -14,7 +14,7 @@
         <li class="bus-state d-flex align-items-center justify-content-around">
           <div class="seqNo">{{i+1}}</div>
           <div class="sta-name">{{bus.StopName}}</div>
-          <div class="time">約 {{bus.comeTime}}</div>
+          <div class="time">約{{bus.comeTime}}</div>
           <div [hidden]="!bus.carId">
             <div class="carId">{{bus.carId}}</div>
           </div>
@@ -24,7 +24,7 @@
 
   </div>
 
-  <div class="col-6">
+  <div class="col-8">
     <app-maptest class="map"></app-maptest>
   </div>
 </div>
