@@ -47,5 +47,10 @@
       <div>第{{busStop.seqNo}}站 {{busStop.nameZh}}</div>
     </agm-info-window>
   </agm-marker>
-
+  <agm-direction [origin]="a1" [destination]="a3" [travelMode]="travelMode"[transitOptions]="transitOptions">
+  </agm-direction>
+  <agm-direction [origin]="a3" [destination]="a4" [travelMode]="travelMode"[transitOptions]="transitOptions">
+  </agm-direction>
+  <!-- <agm-direction [origin]="a3" [destination]="a4" >
+  </agm-direction> -->
 </agm-map>
