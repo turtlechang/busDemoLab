@@ -22,7 +22,6 @@ export class BusService {
   // 取得該路線(單一)的所有公車站牌的
   //{EX:151同安街路線: 統領百貨站、桃園郵局、永和市場、中正三民路口、中正商業大樓、北埔路、中正信光街口、中正慈文路口、慈文國中、中正大興西路口、福安宮...等等}
   getBusList(routeId: string): Observable<BusStop[]> {
-    // let body = routeId ? `?routeIds=${routeId}` : ''
     return this.httpClient.get<BusStop[]>(`/OPD-io/bus4/GetStop.json?routeIds=${routeId}`);
   }
 
@@ -34,11 +33,6 @@ export class BusService {
   getBusData(routeId: string): Observable<BusData[]> {
     return this.httpClient.get<BusData[]>(`/OPD-io/bus4/GetBusData.json?routeIds=${routeId}`);
   }
-
-  // search(): Observable<any> {
-  //   return this.httpClient.get(`/OPD-io/bus4/GetRoute.json`, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } });
-  // }
-
 }
 
 //公車路線列表
