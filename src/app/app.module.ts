@@ -16,6 +16,7 @@ import { FooterComponent } from './footer/footer.component';
 import { StopSearchComponent } from './stop-search/stop-search.component';
 
 import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
+import { AgmDirectionModule } from 'agm-direction'
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 
@@ -42,7 +43,8 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDSMZX1ViYcMzY-DcBa8k_LQGb4UUQn4QM'
-    })
+    }),
+    AgmDirectionModule
   ],
   providers: [GoogleMapsAPIWrapper, { provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
