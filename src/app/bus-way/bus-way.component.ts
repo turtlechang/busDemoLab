@@ -42,27 +42,29 @@ export class BusWayComponent implements OnInit {
   }
 
   getGo() {
-    // 取得單一公車路線的去程列表      
+    // 取得單一公車路線的去程列表
+    // setInterval(() => {
     this.busService.getEstimateTime(this.busStopId).subscribe(
       (time) => {
         this.showTime = time[this.busStopId].filter((o) => o.GoBack == '1');
-        //console.log(time[this.busStopId]['0']['StopName']);
-        //console.log(time[this.busStopId][0].StopName);
-      }
-    )
+        console.log(time[this.busStopId][5].ests[0].carid);
+        console.log(time[this.busStopId][5].ests[0].est);
+      });
     console.log('我是回程:getGo!!');
+    // }, 15000);
   }
 
   getBack() {
-    // 取得單一公車路線的回程列表      
+    // 取得單一公車路線的回程列表    
+    // setInterval(() => {
     this.busService.getEstimateTime(this.busStopId).subscribe(
       (time) => {
         this.showTime = time[this.busStopId].filter((o) => o.GoBack == '2');
         //console.log(time[this.busStopId]['0']['StopName']);
-        //console.log(time[this.busStopId][0].StopName);
-      }
-    );
+        //console.log(time[this.busStopId][5].ests[0].carid);
+      });
     console.log('我是去程:getBack!!');
+    // }, 15000);
   }
 
   // checkWay() {
