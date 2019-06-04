@@ -14,11 +14,11 @@ const routes: Routes = [
   { path: 'BusRouteSearch/:busStopId', component: BusWayComponent },
   { path: 'StopSearch', component: StopSearchComponent },
   { path: 'MapTest', component: MaptestComponent },
-  { path: '**', redirectTo: '/Home'},// 若為 ** ，萬用路由，所有匹配不符合的項目都會轉向此設定，須放在最後面。
+  { path: '**', redirectTo: '/Home' },// 若為 ** ，萬用路由，所有匹配不符合的項目都會轉向此設定，須放在最後面。
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true, enableTracing: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
