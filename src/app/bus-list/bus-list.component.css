@@ -1,8 +1,8 @@
 .card {
-    width: 95%;
+    width: 100%;
     background-color: #fff;
     box-sizing: border-box;
-    padding: 0 0 0 100px;
+    padding: 0 0 0 25px;
     /* padding:上 右 下 左; */
     margin: 0 0 10px 0;
     flex: content;
@@ -30,24 +30,22 @@
 
 .bus-way {
     color: #777;
-    font-size: 34px;
+    font-size: 24px;
     padding: 0 0 5px 0;
     text-align: center;
 }
 
 .bus-num {
     color: #444;
-    font-size: 44px;
+    font-size: 34px;
     text-align: center;
 }
 
 .fa-bus {
-    font-size: 74px;
-    /* position: relative; */
-    /* top: 45px; */
+    font-size: 38px;
     color: #ff000073;
     cursor: pointer;
-    margin-top: 25px;
+    margin-top: 15px;
 }
 
 .btndiv {
@@ -61,46 +59,12 @@
 .btn {
     background-color: rgb(36, 187, 207);
     color: #fff;
-    font-size: 28px;
-    margin-top: 35px;
-    margin-right: 20px;
+    font-size: 18px;    
     /* margin:上 右 下 左; */
-    padding: 11px 29px;
+    padding: 5px 20px;
     /* padding:上下 左右  ; */
     font-family: Microsoft JhengHei;
-    border-radius: 20px;
 }
-
-@media (min-width: 1200px) {}
-
-@media (min-width: 992px) and (max-width: 1199px) {}
-
-@media (max-width: 768px) and (max-width: 991px) {
-    /* 如果瀏覽寬度小於 768 像素則修改背景顏色 */
-    .card {
-        padding: 0 20px 10px 20px;
-    }
-    .card p {
-        margin: 0px 0 10px 30px;
-    }
+ul{
+    padding: 0%
 }
-
-@media (min-width: 576px) {}
-
-@media (max-width: 375px) {
-    /* 如果瀏覽寬度小於 375 像素則修改背景顏色 */
-    .card {
-        padding: 0 15px 10px 15px;
-    }
-    .card p {
-        margin: 0px 0 10px 30px;
-    }
-    .card .fa-thumb-tack {
-        top: 50px;
-    }
-}
-
-/* .buslists {
-    overflow-y: scroll;
-    max-height: 700px;
-} */
