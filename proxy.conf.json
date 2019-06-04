@@ -1,8 +1,10 @@
 {
     "/OPD-io": {
-        "target": "https://apidata.tycg.gov.tw/",
+        "target": "https://apidata.tycg.gov.tw",
         "changeOrigin": true,
         "secure": false,
-        "headers": {"Content-Security-Policy":"script-src 'unsafe-inline'"}
+        "headers": {
+            "Content-Security-Policy": "script-src 'unsafe-inline'"
+        }
     }
 }
