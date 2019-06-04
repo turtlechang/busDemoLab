@@ -8,8 +8,6 @@ import { HttpClient } from '@angular/common/http';
 export class BusService {
 
   //private baseUrl: string = 'https://192.168.195.55';// 開發用
-  //private baseUrl: string = 'https://cors.io/';
-
 
   searchEvent: EventEmitter<string> = new EventEmitter();
 
@@ -17,21 +15,21 @@ export class BusService {
 
   // 取得全部的公車路線{EX: 中壢<->桃園、桃園<->果菜市場、桃園<->華映公司、桃園<->大有路...等等}
   getBusLists() {
-    return this.httpClient.get<BusRouteList[]>(`/OPD-io/bus4/GetRoute.json`);
+    return this.httpClient.get<BusRouteList[]>(`http://192.168.200.12/BusWebApi/api/route`);
   }
   // 取得該路線(單一)的所有公車站牌的
   //{EX:151同安街路線: 統領百貨站、桃園郵局、永和市場、中正三民路口、中正商業大樓、北埔路、中正信光街口、中正慈文路口、慈文國中、中正大興西路口、福安宮...等等}
   getBusList(routeId: string): Observable<BusStop[]> {
-    return this.httpClient.get<BusStop[]>(`/OPD-io/bus4/GetStop.json?routeIds=${routeId}`);
+    return this.httpClient.get<BusStop[]>(`http://192.168.200.12/BusWebApi/api/stop/${routeId}`);
   }
 
   // 取得該路線(單一)的所有公車站牌的等待剩餘時間
   getEstimateTime(routeId: string): Observable<BusEstimateTimes> {
-    return this.httpClient.get<BusEstimateTimes>(`/OPD-io/bus4/GetEstimateTime.json?routeIds=${routeId}`);
+    return this.httpClient.get<BusEstimateTimes>(`http://192.168.200.12/BusWebApi/api/estimatetime/${routeId}`);
   }
 
   getBusData(routeId: string): Observable<BusData[]> {
-    return this.httpClient.get<BusData[]>(`/OPD-io/bus4/GetBusData.json?routeIds=${routeId}`);
+    return this.httpClient.get<BusData[]>(`http://192.168.200.12/BusWebApi/api/busdata/${routeId}`);
   }
 }
 
@@ -94,23 +92,65 @@ export interface BusRouteList {
 
 //公車站牌
 export interface BusStop {
-  Id: string,//站位代碼
-  routeId: string,//路線代碼
-  nameZh: string,//站位名稱
-  seqNo: string,//站序
-  pgp: string,//保留用
-  terminal: string,//保留用
-  districtId: string,//保留用
-  GoBack: string,//去返程[1=去程,2=返程]
-  latitude: number,//所在位置緯度
-  longitude: number,//所在位置經度
-  EXTVoiceNO: string,//舊系統用站牌擴充代碼，不再使用
-  SID: string,//站牌內碼
-  ivrno: number//語音播報代碼
+  /**
+   * 站位代碼
+   */
+  Id: string,
+  /**
+   * 路線代碼
+   */
+  routeId: string,
+  /**
+   * 站位名稱
+   */
+  nameZh: string,
+  /**
+   * 站序
+   */
+  seqNo: string,
+  /**
+   * 保留用
+   */
+  pgp: string,
+  /**
+   * 保留用
+   */
+  terminal: string,
+  /**
+   * 保留用
+   */
+  districtId: string,
+  /**
+   * 去返程(1=去程,2=返程)
+   */
+  GoBack: string,
+  /**
+   * 所在位置緯度
+   */
+  latitude: number,
+  /**
+   * 所在位置經度
+   */
+  longitude: number,
+  /**
+   * 舊系統用站牌擴充代碼，不再使用
+   */
+  EXTVoiceNO: string,
+  /**
+   * 站牌內碼
+   */
+  SID: string,
+  /**
+   * 語音播報代碼
+   */
+  ivrno: number
 }
 
 export interface BusEstimateTimes {
-  routeIds: BusEstimateTime[],//某單一公車路線名稱，型態是BusEstimateTime陣列
+  /**
+   * 某單一公車路線名稱，型態是BusEstimateTime陣列
+   */
+  routeIds: BusEstimateTime[]
 }
 
 //公車站牌的等待剩餘時間
