@@ -9,9 +9,9 @@
   <h5>緯度:{{lat}} 經度:{{lng}}</h5>
 </div>
 
-<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoomValue">
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoomValue" (mapReady)="mapReady($event)">
   <!-- longitude:經度  latitude:緯度-->
-
+  <input type="button" class="btn btn-sm" id="clear" value="Clear">
   <agm-marker *ngFor="let busData of busDatasGo;let i = index" [latitude]="busData.Latitude"
     [longitude]="busData.Longitude" [iconUrl]="iconUrlBusIconGo" (markerClick)="isOpen">
     <agm-info-window [latitude]="lat+0.0005" [longitude]="lng">
@@ -47,10 +47,5 @@
       <div>第{{busStop.seqNo}}站 {{busStop.nameZh}}</div>
     </agm-info-window>
   </agm-marker>
-  <agm-direction [origin]="a1" [destination]="a3" [travelMode]="travelMode"[transitOptions]="transitOptions">
-  </agm-direction>
-  <agm-direction [origin]="a3" [destination]="a4" [travelMode]="travelMode"[transitOptions]="transitOptions">
-  </agm-direction>
-  <!-- <agm-direction [origin]="a3" [destination]="a4" >
-  </agm-direction> -->
+
 </agm-map>
