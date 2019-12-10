@@ -15,21 +15,21 @@ export class BusService {
 
   // 取得全部的公車路線{EX: 中壢<->桃園、桃園<->果菜市場、桃園<->華映公司、桃園<->大有路...等等}
   getBusLists() {
-    return this.httpClient.get<BusRouteList[]>(`http://192.168.200.12/BusWebApi/api/route`);
+    return this.httpClient.get<BusRouteList[]>(`http://192.168.199.3/BusWebApi/api/route`);
   }
   // 取得該路線(單一)的所有公車站牌的
   //{EX:151同安街路線: 統領百貨站、桃園郵局、永和市場、中正三民路口、中正商業大樓、北埔路、中正信光街口、中正慈文路口、慈文國中、中正大興西路口、福安宮...等等}
   getBusList(routeId: string): Observable<BusStop[]> {
-    return this.httpClient.get<BusStop[]>(`http://192.168.200.12/BusWebApi/api/stop/${routeId}`);
+    return this.httpClient.get<BusStop[]>(`http://192.168.199.3/BusWebApi/api/stop/${routeId}`);
   }
 
   // 取得該路線(單一)的所有公車站牌的等待剩餘時間
   getEstimateTime(routeId: string): Observable<BusEstimateTimes> {
-    return this.httpClient.get<BusEstimateTimes>(`http://192.168.200.12/BusWebApi/api/estimatetime/${routeId}`);
+    return this.httpClient.get<BusEstimateTimes>(`http://192.168.199.3/BusWebApi/api/estimatetime/${routeId}`);
   }
 
   getBusData(routeId: string): Observable<BusData[]> {
-    return this.httpClient.get<BusData[]>(`http://192.168.200.12/BusWebApi/api/busdata/${routeId}`);
+    return this.httpClient.get<BusData[]>(`http://192.168.199.3/BusWebApi/api/busdata/${routeId}`);
   }
 }
 
